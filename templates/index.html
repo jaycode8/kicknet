@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KickNet</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/tailwind.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="w-full h-screen bg-bgColor overflow-hidden kicknet">
+        <div class="w-full h-full grid homeCols">
+            <div class="p-3">
+                <div class="h-full w-full rounded-2xl">
+                    <div x-data="{ openTab: 1 }" class="rounded-lg overflow-hidden bg-gray-600 text-white">
+                        <div class="pb-0">
+                            <button @click="openTab === 1 ? openTab = 0 : openTab = 1" class="w-full text-left px-4 py-2 flex justify-between items-center bg-gray-400">
+                                <span class="font-semibold">Popular Leagues</span>
+                                <svg class="h-6 w-6 transform transition-transform" :class="{ 'rotate-180': openTab === 1 }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div x-show="openTab === 1" class="px-4 py-2 flex gap-2 items-center">
+                                <div class="w-8 h-8 rounded-full">
+                                    <img src="{{ url_for('static', filename='images/champions.png') }}" class="w-full h-full object-cover"/>
+                                </div>
+                                <p>UEFA Champions</p>
+                            </div>
+                            <div x-show="openTab === 1" class="px-4 py-2 flex gap-2 items-center">
+                                <div class="w-8 h-8 rounded-full">
+                                    <img src="{{ url_for('static', filename='images/europa.png') }}" class="w-full h-full object-cover"/>
+                                </div>
+                                <p>European League</p>
+                            </div>
+                            <div x-show="openTab === 1" class="px-4 py-2 flex gap-2 items-center">
+                                <div class="w-8 h-8 rounded-full bg-white">
+                                    <img src="{{ url_for('static', filename='images/epl.png') }}" class="w-full h-full object-contain"/>
+                                </div>
+                                <p>Premier League</p>
+                            </div>
+                            <div x-show="openTab === 1" class="px-4 py-2 flex gap-2 items-center">
+                                <div class="w-8 h-8 rounded-full">
+                                    <img src="{{ url_for('static', filename='images/laliga.png') }}" class="w-full h-full object-cover"/>
+                                </div>
+                                <p>La Liga</p>
+                            </div>
+                            <div x-show="openTab === 1" class="px-4 py-2 flex gap-2 items-center">
+                                <div class="w-8 h-8 rounded-full">
+                                    <img src="{{ url_for('static', filename='images/seriea.png') }}" class="w-full h-full object-cover"/>
+                                </div>
+                                <p>Serie A</p>
+                            </div>
+                            <div x-show="openTab === 1" class="px-4 py-2 flex gap-2 items-center">
+                                <div class="w-8 h-8 rounded-full">
+                                    <img src="{{ url_for('static', filename='images/budeslig.png') }}" class="w-full h-full object-cover"/>
+                                </div>
+                                <p>Bundesliga</p>
+                            </div>
+                            <div x-show="openTab === 1" class="px-4 py-2 flex gap-2 items-center">
+                                <div class="w-8 h-8 rounded-full bg-red-500"></div>
+                                <p>Lige 1</p>
+                            </div>
+                        </div>
+                        <div class="">
+                            <button @click="openTab === 2 ? openTab = 0 : openTab = 2" class="w-full text-left px-4 py-2 flex justify-between items-center bg-gray-400">
+                                <span class="font-semibold">Popular Countries</span>
+                                <svg class="h-6 w-6 transform transition-transform" :class="{ 'rotate-180': openTab === 2 }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div x-show="openTab === 2" class="px-4 py-2 flex gap-2 items-center">
+                                <div class="w-8 h-8 rounded-full overflow-hidden">
+                                    <img src="{{ url_for('static', filename='images/germany.jpg') }}" class="w-full h-full object-cover"/>
+                                </div>
+                                <p>Germany</p>
+                            </div>
+                            <div x-show="openTab === 2" class="px-4 py-2 flex gap-2 items-center">
+                                <div class="w-8 h-8 rounded-full overflow-hidden">
+                                    <img src="{{ url_for('static', filename='images/france.png') }}" class="w-full h-full object-cover"/>
+                                </div>
+                                <p>France</p>
+                            </div>
+                            <div x-show="openTab === 2" class="px-4 py-2 flex gap-2 items-center">
+                                <div class="w-8 h-8 rounded-full overflow-hidden">
+                                    <img src="{{ url_for('static', filename='images/spain.jpg') }}" class="w-full h-full object-cover"/>
+                                </div>
+                                <p>Spain</p>
+                            </div>
+                            <div x-show="openTab === 2" class="px-4 py-2 flex gap-2 items-center">
+                                <div class="w-8 h-8 rounded-full overflow-hidden">
+                                    <img src="{{ url_for('static', filename='images/england.jpg') }}" class="w-full h-full object-cover"/>
+                                </div>
+                                <p>England</p>
+                            </div>
+                            <div x-show="openTab === 2" class="px-4 py-2 flex gap-2 items-center">
+                                <div class="w-8 h-8 rounded-full overflow-hidden">
+                                    <img src="{{ url_for('static', filename='images/italy.jpg') }}" class="w-full h-full object-cover"/>
+                                </div>
+                                <p>Italy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="overflow-y-scroll p-3 matches">
+                <div class="rounded-2xl bgCover overflow-hidden h-80">
+                    <div class="overlay w-1/2 h-full p-4 grid items-start">
+                        <div class="w-full flex items-center text-white gap-2">
+                            <span class="w-11 h-11 bg-black rounded-2xl overflow-hidden p-2">
+                                <img src="{{ url_for('static', filename='images/liva.png') }}" class="w-full h-full object-contain"/>
+                            </span>
+                            <p class="font-bold">VS</p>
+                            <span class="w-11 h-11 bg-black rounded-2xl overflow-hidden p-2">
+                                <img src="{{ url_for('static', filename='images/manu.png') }}" class="w-full h-full object-contain"/>
+                            </span>
+                            <span class="w-40 h-11 bg-black rounded-2xl overflow-hidden ml-6 p-2 flex items-center gap-2">
+                                <span class="w-7 h-7 bg-white rounded-full">
+                                    <img src="{{ url_for('static', filename='images/epl.png') }}" class="w-full h-full object-contain"/>
+                                </span>
+                                <small>Tuesday, 23:00HR</small>
+                            </span>
+                        </div>
+                        <div class="text-white flex flex-col gap-2">
+                            <p>Premier League</p>
+                            <h1 class="text-xl font-bold">Liverpool FC vs Manchester United</h1>
+                            <p>
+                                To switch between the interactive traceback and the plaintext one, you can click
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-5">
+                    <div class="flex justify-between text-white">
+                        <h1 class="text-2xl">Football Matches</h1>
+                        <span>June 2,2024</span>
+                    </div>
+                        <div class="bg-black w-full h-full mt-2 rounded-2xl">
+                            <div x-data="{ openTab: 1 }" class="rounded-lg overflow-hidden bg-gray-600 text-white">
+                            <div class="pb-0">
+                                <button @click="openTab === 1 ? openTab = 0 : openTab = 1" class="w-full text-left px-4 py-2 flex justify-between items-center bg-gray-400">
+                                    <div class="flex w-full items-center justify-between gap-1">
+                                        <div class="flex items-center gap-2">
+                                            <div class="w-7 h-7 bg-white rounded-full overflow-hidden">
+                                                <img src="{{ url_for('static', filename='images/epl.png') }}" class="w-full h-full object-contain"/>
+                                            </div>
+                                            <span>
+                                                <h1 class="font-semibold">Premier League</h1>
+                                                <p class="text-sm">England</p>
+                                            </span>
+                                        </div>
+                                    <div>
+                                    <svg class="h-6 w-6 transform transition-transform" :class="{ 'rotate-180': openTab === 1 }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                    </svg>
+                                </button>
+                                <div x-show="openTab === 1" class="px-4 py-2 flex gap-3 items-center">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-6 h-6 rounded-full">
+                                            <img src="{{ url_for('static', filename='images/liva.png') }}" class="w-full h-full object-contain"/>
+                                        </div>
+                                        <p class="text-sm">Liverpool</p>
+                                    </div>
+                                    <h2 class="font-bold">VS</h2>
+                                    <div class="flex items-center gap-3">
+                                        <p class="text-sm">Manchester United</p>
+                                        <div class="w-6 h-6 rounded-full">
+                                            <img src="{{ url_for('static', filename='images/manu.png') }}" class="w-full h-full object-contain"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                            </div>
+                            <div class="">
+                                <button @click="openTab === 2 ? openTab = 0 : openTab = 2" class="w-full text-left px-4 py-2 flex justify-between items-center bg-gray-400">
+                                    <div class="flex w-full items-center justify-between gap-1">
+                                        <div class="flex items-center gap-2">
+                                            <div class="w-7 h-7 rounded-full overflow-hidden">
+                                                <img src="{{ url_for('static', filename='images/laliga.png') }}" class="w-full h-full object-cover"/>
+                                            </div>
+                                            <span>
+                                                <h1 class="font-semibold">La Liga</h1>
+                                                <p class="text-sm">Spain</p>
+                                            </span>
+                                        </div>
+                                    <div>
+                                    <svg class="h-6 w-6 transform transition-transform" :class="{ 'rotate-180': openTab === 2 }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                    </svg>
+                                </button>
+                                <div x-show="openTab === 2" class="px-4 py-2 flex gap-2 items-center">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-6 h-6 rounded-full">
+                                            <img src="{{ url_for('static', filename='images/real.png') }}" class="w-full h-full object-contain"/>
+                                        </div>
+                                        <p class="text-sm">Real Madrid</p>
+                                    </div>
+                                    <h2 class="font-bold">VS</h2>
+                                    <div class="flex items-center gap-3">
+                                        <p class="text-sm">Atletico Madrid</p>
+                                        <div class="w-6 h-6 rounded-full">
+                                            <img src="{{ url_for('static', filename='images/atleticomadrid.png') }}" class="w-full h-full object-contain"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div x-show="openTab === 2" class="px-4 py-2 flex gap-2 items-center">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-6 h-6 rounded-full">
+                                            <img src="{{ url_for('static', filename='images/barca.png') }}" class="w-full h-full object-contain"/>
+                                        </div>
+                                        <p class="text-sm">Barcelona</p>
+                                    </div>
+                                    <h2 class="font-bold">VS</h2>
+                                    <div class="flex items-center gap-3">
+                                        <p class="text-sm">AC Milan</p>
+                                        <div class="w-6 h-6 rounded-full">
+                                            <img src="{{ url_for('static', filename='images/acmilan.png') }}" class="w-full h-full object-contain"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid liveSection gap-4 px-4 py-3">
+                <div class="liveMatches rounded-2xl p-4 text-white grid">
+                    <div>
+                        <h1 class="text-xl font-bold leading-8">Popular Live Matches</h1>
+                        <p class="text-sm">italy/Serie A/Matchday 2 of 38</p>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex flex-col gap-2 items-center">
+                            <div class="w-20 h-20 rounded-full">
+                                <img src="{{ url_for('static', filename='images/napoli.png') }}" class="w-full h-full object-contain"/>
+                            </div>
+                            <p>Napoli</p>
+                        </div>
+                        <div class="grid place-items-center">
+                            <span class="text-small py-0.5 px-2.5 bg-red-500">Live</span>
+                            <h1 class="font-bold text-2xl">2:1</h1>
+                            <small class="text-small">VS</small>
+                        </div>
+                        <div class="flex flex-col gap-2 items-center">
+                            <div class="w-20 h-20 rounded-full overflow-hidden">
+                                <img src="{{ url_for('static', filename='images/juve.png') }}" class="w-full h-full object-cover"/>
+                            </div>
+                            <p>Juventus</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-flow-col place-items-center gap-0.5">
+                        <div class="flex place-content-center gap-3 bg-black rounded-lg w-full py-2">
+                            <p>1</p>
+                            <span>2.90</span>
+                        </div>
+                        <div class="flex place-content-center gap-3 bg-black rounded-lg w-full py-2">
+                            <p>x</p>
+                            <span>2.10</span>
+                        </div>
+                        <div class="flex place-content-center gap-3 bg-black rounded-lg w-full py-2">
+                            <p>2</p>
+                            <span>1.70</span>
+                        </div>
+                    </div>
+                    <div class="grid place-items-center">
+                        <button class="bg-blue-400 py-1 px-7">Match details</button>
+                    </div>
+                </div>
+                <div class="liveMatches rounded-2xl"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/alpine.min.js') }}"></script>
+</body>
+</html>
