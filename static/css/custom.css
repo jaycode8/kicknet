@@ -1,8 +1,11 @@
 .kicknet{
     background: #121212;
 }
+.activeBar{
+    left: 0;
+}
 .homeCols{
-    grid-template-columns: .2fr .58fr .22fr;
+    grid-template-columns: .25fr .75fr;
 }
 .homeRows{
     grid-template-rows: .45fr .55fr;
@@ -29,4 +32,13 @@
 }
 .text-small{
     font-size: 8px;
+}
+.mainoo{
+    grid-template-columns: 1.5fr .5fr !important;
+}
+
+@media screen and (max-width: 850px) {
+    /* .homeCols{
+        grid-template-columns: 1fr;
+    }     */
 }
