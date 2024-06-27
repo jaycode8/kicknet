@@ -2,7 +2,8 @@
     background: #121212;
 }
 .activeBar{
-    left: 0;
+    /* left: 0; */
+    background: red;
 }
 .homeCols{
     grid-template-columns: .25fr .75fr;
